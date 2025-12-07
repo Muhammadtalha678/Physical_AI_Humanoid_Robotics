@@ -15,7 +15,7 @@ const config: Config = {
   url: 'https://muhammadtalha678.github.io',
 
   // MUST MATCH YOUR REPO NAME EXACTLY
-  baseUrl: '/Physical-AI-Humanoid-Robotics/',
+  baseUrl: '/',
 
   organizationName: 'Muhammadtalha678',
   projectName: 'Physical-AI-Humanoid-Robotics',
