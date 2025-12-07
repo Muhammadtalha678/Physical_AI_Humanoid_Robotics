@@ -1,8 +1,8 @@
 <!--
 Sync Impact Report:
-Version change: N/A → 1.0.0
+Version change: 1.0.0 → 1.1.0
 Modified principles: N/A
-Added sections: All principles and sections added for Physical AI Humanoid Robotics Textbook project
+Added sections: VII. Interactive Chatbot Integration (NON-NEGOTIABLE)
 Removed sections: N/A
 Templates requiring updates: N/A
 Follow-up TODOs: None
@@ -29,6 +29,9 @@ All learning materials must be freely accessible via GitHub Pages, with source c
 ### VI. Technical Accuracy and Verification
 All technical content related to humanoid robotics must be factually accurate, verified by domain experts, and regularly updated to reflect current research and industry standards.
 
+### VII. Interactive Chatbot Integration (NON-NEGOTIABLE)
+An AI-powered chatbot using Chatkit library must be integrated into all pages of the Docusaurus-based textbook. The chatbot interface shall appear in the bottom-right corner of every page, providing consistent user interaction and support. The chatbot must handle proper request-response cycles, maintain conversation context, and provide helpful responses related to the textbook content and humanoid robotics topics.
+
 ## Content Standards
 
 All textbook materials must meet rigorous academic and technical standards. Content should include mathematical foundations, practical implementations, real-world applications, and hands-on exercises. Each chapter must include learning objectives, key concepts, and assessment materials.
@@ -41,4 +44,4 @@ Development follows the Spec-Kit Plus workflow: Constitution → Spec → Plan �
 
 This constitution governs all aspects of the Physical AI Humanoid Robotics Textbook project. All contributors must adhere to these principles. Amendments require documentation of rationale, community review, and approval by project maintainers. All pull requests must verify compliance with these principles.
 
-**Version**: 1.0.0 | **Ratified**: 2025-12-07 | **Last Amended**: 2025-12-07
+**Version**: 1.1.0 | **Ratified**: 2025-12-07 | **Last Amended**: 2025-12-07

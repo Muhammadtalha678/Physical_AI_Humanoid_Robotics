@@ -5,7 +5,11 @@
       "Bash(git rev-parse --is-inside-work-tree)",
       "Bash(git add .)",
       "Bash(npm run build)",
-      "Bash(git add .claude/settings.local.json docs/docusaurus.config.ts docs/src/components/TextbookLayout.tsx)"
+      "Bash(git add .claude/settings.local.json docs/docusaurus.config.ts docs/src/components/TextbookLayout.tsx)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nFix GitHub Pages deployment workflow and improve Docusaurus configuration\n\n- Fix GitHub Actions workflow to properly locate package-lock.json in docs/ subdirectory\n- Add trailingSlash configuration to docusaurus.config.ts for proper GitHub Pages URL handling\n- Update TextbookLayout.tsx to be compatible with current Docusaurus version\n- Enable search functionality in navbar\n- Configure proper GitHub Pages deployment settings\n\nThese changes resolve the deployment issues and ensure the site builds correctly.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git rev-parse --abbrev-ref HEAD)",
+      "Bash(git checkout -b feat/add-chatbot-integration-principle)",
+      "Bash(git add .claude/settings.local.json .specify/memory/constitution.md history/prompts/constitution/1-update-chatbot-ui.constitution.prompt.md)"
     ],
     "deny": [],
     "ask": []
