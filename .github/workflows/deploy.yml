@@ -10,6 +10,8 @@ jobs:
   deploy:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
+    permissions: # <-- Add this permissions block
+      contents: write # <-- Grant write access to repository contents
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
