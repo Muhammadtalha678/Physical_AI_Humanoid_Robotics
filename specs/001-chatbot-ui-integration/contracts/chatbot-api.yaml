@@ -1,0 +1,146 @@
+# Chatbot API Contract for Docusaurus Integration
+
+openapi: 3.0.0
+info:
+  title: Chatbot UI Integration API
+  version: 1.0.0
+  description: API contracts for the chatbot UI component in Docusaurus documentation
+
+paths:
+  /api/chat/start-session:
+    post:
+      summary: Start a new chat session
+      description: Initializes a new conversation session for the user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                currentPage:
+                  type: string
+                  description: URL of the current documentation page
+                  example: "/docs/introduction"
+                userId:
+                  type: string
+                  description: Optional user identifier
+                  example: "user-123"
+              required:
+                - currentPage
+      responses:
+        '200':
+          description: Session started successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sessionId:
+                    type: string
+                    description: Unique identifier for the chat session
+                    example: "session-456"
+                  status:
+                    type: string
+                    enum: [success]
+                required:
+                  - sessionId
+                  - status
+
+  /api/chat/send-message:
+    post:
+      summary: Send a message to the chatbot
+      description: Sends a user message to the chatbot and returns the response
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sessionId:
+                  type: string
+                  description: Current chat session identifier
+                  example: "session-456"
+                message:
+                  type: string
+                  description: User's message content
+                  example: "What is humanoid robotics?"
+                currentPage:
+                  type: string
+                  description: URL of the current documentation page for context
+                  example: "/docs/introduction"
+              required:
+                - sessionId
+                - message
+                - currentPage
+      responses:
+        '200':
+          description: Message processed successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: string
+                    description: Chatbot's response to the user's message
+                    example: "Humanoid robotics is a branch of robotics focused on creating robots with human-like characteristics..."
+                  messageId:
+                    type: string
+                    description: Unique identifier for the response message
+                    example: "msg-789"
+                  timestamp:
+                    type: string
+                    format: date-time
+                    description: When the response was generated
+                    example: "2025-12-07T10:00:00Z"
+                required:
+                  - response
+                  - messageId
+                  - timestamp
+        '400':
+          description: Invalid request parameters
+        '404':
+          description: Session not found
+
+  /api/chat/get-context:
+    get:
+      summary: Get context for current page
+      description: Retrieves relevant context information for the current documentation page
+      parameters:
+        - name: pageUrl
+          in: query
+          required: true
+          schema:
+            type: string
+            example: "/docs/introduction"
+      responses:
+        '200':
+          description: Context retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  pageContext:
+                    type: object
+                    description: Context information for the current page
+                    properties:
+                      title:
+                        type: string
+                        description: Title of the documentation page
+                      content:
+                        type: string
+                        description: Relevant content snippets from the page
+                      keywords:
+                        type: array
+                        items:
+                          type: string
+                        description: Key terms and concepts from the page
+                  pageUrl:
+                    type: string
+                    description: URL of the documentation page
+                required:
+                  - pageContext
+                  - pageUrl
