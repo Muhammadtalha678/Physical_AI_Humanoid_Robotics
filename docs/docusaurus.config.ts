@@ -12,7 +12,7 @@ const config: Config = {
   },
 
   // MUST MATCH YOUR GH-PAGES URL
-  url: 'https://muhammadtalha678.github.io',
+  url: 'https://physical-ai-humanoid-robotics-bay.vercel.app',
 
   // MUST MATCH YOUR REPO NAME EXACTLY
   baseUrl: '/',
